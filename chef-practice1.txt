@@ -1,0 +1,38 @@
+LINK TO DOWNLOAD CHEF-WORKSTATION
+https://packages.chef.io/files/stable...
+
+
+
+file '/myfile' do
+content 'Welcome to Chef Practice'
+action :create
+end
+
+*******
+
+
+package 'tree' do
+action :install
+end
+
+file '/myfile2' do
+content 'This is My Second Project code'
+action :create
+owner 'root'
+group 'root'
+end
+
+*******
+package 'httpd' do
+action :install
+end
+
+file '/var/www/html/index.html' do
+content 'Welcome to Chef Practice'
+action :create
+end
+
+
+service 'httpd' do
+action [:enable, :start]
+end
