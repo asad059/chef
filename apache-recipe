@@ -1,0 +1,45 @@
+package 'httpd' do
+  action :install
+end
+
+file '/var/www/html/index.html' do
+  content '<!DOCTYPE html>
+  <html>
+  <head>
+  <title>Font Awesome Icons</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<h1>Welcome to Chef Practice</h1>
+<h2>Thanks</h2>
+<h3>Asad</h3>
+<h4>We automate everything</h4>
+<h1>--------------------------</h1>
+<h2>Lets Move forward
+, We added role in it</h2>
+<i class="I"></i>
+<i class="fa fa-heart" style="font-size:24px"></i>
+<i class="fa fa-heart" style="font-size:36px;"></i>
+<i class="fa fa-heart" style="font-size:48px;color:red"></i>
+<br>
+
+
+
+</body>
+</html>
+'
+  action :create
+end
+
+
+service 'httpd' do
+  action [:enable, :start]
+end
+
+%w(httpd mariadb-server unzip git vim tree curl) .each do |p|
+package p do
+action :install
+end
+end
