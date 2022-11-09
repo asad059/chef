@@ -1,5 +1,5 @@
 LINK TO DOWNLOAD CHEF-WORKSTATION
-https://packages.chef.io/files/stable...
+https://packages.chef.io/files/stable/chef-workstation/22.10.1013/el/7/chef-workstation-22.10.1013-1.el7.x86_64.rpm
 
 
 
